@@ -88,6 +88,7 @@ jobs:
           RP_API_KEY: ${{ secrets.RP_API_KEY }}
           RP_ENDPOINT: ${{ secrets.RP_ENDPOINT }}
           RP_PROJECT: ${{ secrets.RP_PROJECT }}
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
 
   finish-rp-launch:
     runs-on: ubuntu-latest

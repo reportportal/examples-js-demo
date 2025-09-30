@@ -1,16 +1,22 @@
+require('dotenv/config');
+
 const config = {
   endpoint: process.env.RP_ENDPOINT,
   apiKey: process.env.RP_API_KEY,
-  launch: 'Playwright e2e tests regression',
+  launch: 'Playwright regression',
   project: process.env.RP_PROJECT,
   attributes: [
     {
-      key: 'agent',
+      key: 'framework',
       value: 'playwright',
     },
     {
-      value: 'example',
+      key: 'build',
+      value: process.env.GITHUB_RUN_NUMBER || 'local',
     },
+    {
+      value: 'demo',
+    }
   ],
   description: 'This is launch with **playwright** tests',
   includeTestSteps: true,
