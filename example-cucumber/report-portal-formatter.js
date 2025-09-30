@@ -19,7 +19,7 @@ const rpConfig = {
       value: 'demo',
     }
   ],
-  description: 'Your launch name description',
+  description: 'This launch contains the `cucumber` E2E tests',
   scenarioBasedStatistics: true,
   restClientConfig: {
     timeout: 0,

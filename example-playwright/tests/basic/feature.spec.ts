@@ -126,7 +126,7 @@ test.describe(suiteName, () => {
     await expect(title).toHaveText('Playwright');
   });
 
-  test.skip('should retest the right title exists', async ({ page, browserName }) => {
+  test('should retest the right title exists', async ({ page, browserName }) => {
     console.log('Add **ReportPortal** related *metadata* before starting main test actions.');
     ReportingApi.addAttributes([
       {
@@ -146,6 +146,7 @@ test.describe(suiteName, () => {
       This test simply checks that **Playwright** website contains **"ReportPortal"** word in the navigation bar.
       But seems like this test will *fail*.
     `);
+    test.skip();
 
     console.warn('Warning! The **Playwright** website may not contain "ReportPortal" mentions in its `navigation`.');
 
