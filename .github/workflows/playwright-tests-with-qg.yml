@@ -28,7 +28,7 @@ env:
 
 jobs:
   playwright-tests:
-    runs-on: ubuntu-latest
+    runs-on: rp-beta-runner-set
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIR }}
