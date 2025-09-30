@@ -22,7 +22,7 @@ env:
 jobs:
   cucumber-tests:
     timeout-minutes: 60
-    runs-on: rp-beta-runner-set
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ${{ env.WORKING_DIR }}
