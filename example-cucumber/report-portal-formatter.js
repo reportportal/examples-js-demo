@@ -21,6 +21,9 @@ const rpConfig = {
   ],
   description: 'Your launch name description',
   scenarioBasedStatistics: true,
+  restClientConfig: {
+    timeout: 0,
+  },
 };
 
 module.exports = createRPFormatterClass(rpConfig);
