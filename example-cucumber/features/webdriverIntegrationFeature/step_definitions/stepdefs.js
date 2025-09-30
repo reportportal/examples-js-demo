@@ -2,8 +2,6 @@ const { Given, When, Then } = require('@cucumber/cucumber');
 const { until } = require('selenium-webdriver');
 
 Given(/^I am on the Cucumber.js GitHub repository/, function(callback) {
-  this.addScenarioDescription('This test should load GitHub cucumber-js page and take the screenshot!');
-  this.addScenarioAttributes([{ key: 'feature', value: 'demo' }]);
   this.addDescription('This test should load GitHub cucumber-js page and take the screenshot!');
   this.info('Going to the GitHub');
   global.browser

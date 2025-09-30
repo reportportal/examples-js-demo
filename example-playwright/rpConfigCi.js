@@ -18,7 +18,7 @@ const config = {
       value: 'demo',
     }
   ],
-  description: 'This is launch with **playwright** tests',
+  description: 'This launch contains the `playwright` E2E tests',
   includeTestSteps: true,
   launchUuidPrint: true,
   skippedIssue: false,

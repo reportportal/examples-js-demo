@@ -1,4 +1,5 @@
 const { createRPFormatterClass } = require('@reportportal/agent-js-cucumber');
+require('dotenv/config');
 
 const rpConfig = {
   endpoint: process.env.RP_ENDPOINT,
@@ -19,6 +20,7 @@ const rpConfig = {
     }
   ],
   description: 'Your launch name description',
+  scenarioBasedStatistics: true,
 };
 
 module.exports = createRPFormatterClass(rpConfig);

@@ -1,11 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { ReportingApi } from '@reportportal/agent-js-playwright';
 
-const suiteName = 'More checks related to Playwright website. It should';
-
-function getExpectedNumber() {
-  return [true, 'true'].includes(process.env.RP_FIX_TESTS ?? '') ? 2 : 1;
-}
+const suiteName = 'More checks related to the `Playwright` website. It should';
 
 test.describe(suiteName, () => {
   test.describe.configure({ mode: 'serial', retries: 2 }); // use 'serial' mode and retries for this suite
@@ -32,17 +28,21 @@ test.describe(suiteName, () => {
     suiteName,
   );
 
-  test('has the correct title', async ({ page, browserName }) => {
+  test('have the correct title', async ({ page, browserName }) => {
     ReportingApi.addAttributes([
       {
         key: 'browser',
         value: browserName,
       },
       {
+        key: 'feature',
+        value: 'title',
+      },
+      {
         value: 'demo',
       },
     ]);
-    ReportingApi.setDescription(`The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
+    ReportingApi.setDescription(`Requirements: Jira ticket [](https://jiraeu.epam.com/browse/EPMRPP-108278). The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
       e.g. some important notes from the **Test Case Management system**, special conditions, etc.
     `);
 
@@ -62,10 +62,14 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
+        key: 'feature',
+        value: 'get-started',
+      },
+      {
         value: 'demo',
       },
     ]);
-    ReportingApi.setDescription(`The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
+    ReportingApi.setDescription(`Requirements: Jira ticket [EPMRPP-108279](https://jiraeu.epam.com/browse/EPMRPP-108279). The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
       e.g. some important notes from the **Test Case Management system**, special conditions, etc.
     `);
 
@@ -86,27 +90,22 @@ test.describe(suiteName, () => {
   });
 
   test('should be passed when previous tests passed', async ({ page }) => {
+    ReportingApi.addAttributes([
+      {
+        key: 'feature',
+        value: 'serial',
+      },
+      {
+        value: 'demo',
+      },
+    ]);
+    ReportingApi.setDescription(`Requirements: Jira ticket [EPMRPP-108278](https://jiraeu.epam.com/browse/EPMRPP-108278). The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
+      e.g. some important notes from the **Test Case Management system**, special conditions, etc.
+    `);
+
+
     await page.goto('https://playwright.dev/');
     const title = page.locator('.navbar__inner .navbar__title');
     await expect(title).toHaveText('Playwright');
   });
 });
-
-test.describe('Checks with "toPass" timeouts', () => {
-  test(`Expect pool @desktop`, async () => {
-    await expect
-      .poll(
-        () => {
-          return 2;
-        },
-        { timeout: 30_000 }
-      )
-      .toBe(getExpectedNumber());
-  });
-  test('Expect toPass @desktop', async () => {
-    await expect(() => {
-      expect(2).toBe(getExpectedNumber());
-    }).toPass({ timeout: 30_000 });
-  });
-});
-

@@ -22,22 +22,6 @@ const config: PlaywrightTestConfig = {
   },
   reporter: [['@reportportal/agent-js-playwright', rpConfig]],
   testDir: './tests',
-  projects: [
-    {
-      name: 'basic',
-      testDir: './tests/basic',
-    },
-    {
-      name: 'by-rp-features',
-      testDir: './tests/rp-features',
-      testIgnore: ['retries.spec.ts'],
-    },
-    {
-      name: 'with-retries',
-      testMatch: /retries.spec.ts/,
-      retries: 2,
-    },
-  ],
 };
 
 export default config;

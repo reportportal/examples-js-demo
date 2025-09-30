@@ -1,3 +1,4 @@
+@feature:holiday @demo
 Feature: Is it Holiday yet?
   Everybody wants to know when Saturday is
 
@@ -5,7 +6,7 @@ Feature: Is it Holiday yet?
     Given list of holidays
 
   Scenario Outline: Today is or is not Holiday
-    Description of scenario
+    Check the `holidays`
 
     Given today is "<day>"
     When I ask wheter it's Holiday
@@ -19,8 +20,8 @@ Feature: Is it Holiday yet?
       | St.Patrick's   | Nope   |
 
   Scenario: April Fool's is not Holiday
-    Description of scenario
-
+    Check the `holidays`
+    
     Given today is "Apirl Fool's"
     When I ask wheter it's Holiday
     Then I should be told "Nope"

@@ -11,3 +11,6 @@ __snapshots__
 
 # secrets
 .env
+
+# test results
+test-results/

@@ -49,7 +49,7 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          npm run test:basic | tee ./console.log || true
+          npm run test | tee ./console.log || true
           sed -rn 's/Report Portal Launch UUID: ([^\\r\\n]+)/LAUNCH_UUID=\1/ p' ./console.log  >> "$GITHUB_ENV"
         env:
           RP_API_KEY: ${{ secrets.RP_API_KEY }}
