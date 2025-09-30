@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Demo with Quality Gates
+name: Playwright tests demo with Quality Gates
 
 on:
   workflow_dispatch:
