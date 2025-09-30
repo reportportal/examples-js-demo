@@ -47,6 +47,7 @@ test.describe(suiteName, () => {
     `);
 
     await page.goto('https://playwright.dev/');
+    await page.waitForTimeout(1000);
 
     await test.step('step. Have "Playwright" title', async () => {
       await expect(page).toHaveTitle(/Playwright/);
@@ -74,7 +75,7 @@ test.describe(suiteName, () => {
     `);
 
     console.log('The *"Get started"* link will be clicked.');
-
+    await page.waitForTimeout(500);
     await page.goto('https://playwright.dev/');
     let expectedUrl = /.*intrO/;
 
@@ -84,7 +85,7 @@ test.describe(suiteName, () => {
 
     const screenshot = await page.screenshot();
     await testInfo.attach('screenshot', { body: screenshot, contentType: 'image/png' });
-
+    await page.waitForTimeout(500);
     await page.getByRole('link', { name: 'Get started' }).click();
     await expect(page).toHaveURL(expectedUrl);
   });

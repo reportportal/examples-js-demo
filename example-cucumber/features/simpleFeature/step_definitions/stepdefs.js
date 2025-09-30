@@ -23,17 +23,14 @@ Given('list of holidays', function() {
 });
 
 Given('today is {string}', function(givenDay) {
-  this.info('set the current day');
   this.today = givenDay;
 });
 
 When("I ask whether it's Friday yet", function() {
-  this.info('set the correct answer');
   this.actualAnswer = isItFriday(this.today);
 });
 
 Then('I should be told {string}', function(expectedAnswer) {
-  this.info('validate the answer');
   if (this.actualAnswer !== expectedAnswer) {
     this.error(`Test error: ${this.actualAnswer} !== ${expectedAnswer}`);
   }

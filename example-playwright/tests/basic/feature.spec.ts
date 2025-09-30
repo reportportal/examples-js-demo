@@ -44,6 +44,7 @@ test.describe(suiteName, () => {
     await page.waitForTimeout(1000);
 
     console.warn('Warning! The **Playwright** website may not contain "ReportPortal" mentions in its `navigation`.');
+    await page.waitForTimeout(1000);
     console.log('`Navigate` to the main website page.');
     await page.goto('https://playwright.dev/');
     const title = page.locator('.navbar__inner .navbar__title');
@@ -71,7 +72,7 @@ test.describe(suiteName, () => {
       This test simply checks that **Playwright** website contains the correct title.
     `);
     await page.goto('https://playwright.dev/');
-
+    await page.waitForTimeout(500);
     const title = page.locator('.navbar__inner .navbar__title');
     await page.waitForTimeout(Math.random() * 1000);
     await expect(title).toHaveText(getExpectedTitle());
@@ -96,6 +97,7 @@ test.describe(suiteName, () => {
       Requirements: Jira ticket [EPMRPP-108278](https://jiraeu.epam.com/browse/EPMRPP-108278).
       This test simply checks that **Playwright** website contains the correct title.
     `);
+    await page.waitForTimeout(500);
     await page.goto('https://playwright.dev/');
     const title = page.locator('.navbar__inner .navbar__title');
     await page.waitForTimeout(3000);
@@ -119,6 +121,7 @@ test.describe(suiteName, () => {
     ]);
     ReportingApi.setDescription('Requirements: Jira ticket [EPMRPP-108278](https://jiraeu.epam.com/browse/EPMRPP-108278). This test simply checks that **Playwright** website contains the `Playwright` word in the navigation bar.');
     await page.goto('https://playwright.dev/');
+    await page.waitForTimeout(500);
     const title = page.locator('.navbar__inner .navbar__title');
     await expect(title).toHaveText('Playwright');
   });
