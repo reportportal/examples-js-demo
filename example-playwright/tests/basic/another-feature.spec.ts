@@ -42,7 +42,7 @@ test.describe(suiteName, () => {
         value: 'demo',
       },
     ]);
-    ReportingApi.setDescription(`Requirements: Jira ticket [](https://jiraeu.epam.com/browse/EPMRPP-108278). The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
+    ReportingApi.setDescription(`Requirements: Jira ticket [EPMRPP-108278](https://jiraeu.epam.com/browse/EPMRPP-108278). The test name is self-descriptive, but do not hesitate to provide additional *info* about the test,
       e.g. some important notes from the **Test Case Management system**, special conditions, etc.
     `);
 
