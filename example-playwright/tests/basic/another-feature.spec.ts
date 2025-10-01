@@ -12,12 +12,12 @@ test.describe(suiteName, () => {
       value: 'website',
     },
     {
-      key: 'feature',
-      value: 'title',
+      key: 'requirement',
+      value: 'Page_title',
     },
     {
-      key: 'feature',
-      value: 'get-started',
+      key: 'requirement',
+      value: 'Intro_page',
     },
     {
       value: 'demo',
@@ -35,8 +35,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'title',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'medium',
       },
       {
         value: 'demo',
@@ -63,8 +67,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'get-started',
+        key: 'requirement',
+        value: 'Intro_page',
+      },
+      {
+        key: 'priority',
+        value: 'high',
       },
       {
         value: 'demo',
@@ -93,8 +101,12 @@ test.describe(suiteName, () => {
   test('should be passed when previous tests passed', async ({ page }) => {
     ReportingApi.addAttributes([
       {
-        key: 'feature',
-        value: 'serial',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'medium',
       },
       {
         value: 'demo',

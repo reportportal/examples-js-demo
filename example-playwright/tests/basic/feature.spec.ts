@@ -10,8 +10,8 @@ const suiteName = 'The Playwright`s website main page should';
 test.describe(suiteName, () => {
   ReportingApi.addAttributes([
     {
-      key: 'feature',
-      value: 'title',
+      key: 'requirement',
+      value: 'Page_title',
     },
     {
       value: 'demo',
@@ -29,8 +29,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'title-error',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'medium',
       },
       {
         value: 'demo',
@@ -60,8 +64,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'title',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'medium',
       },
       {
         value: 'demo',
@@ -86,8 +94,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'title',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'medium',
       },
       {
         value: 'demo',
@@ -112,8 +124,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'title',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'high',
       },
       {
         value: 'demo',
@@ -134,8 +150,12 @@ test.describe(suiteName, () => {
         value: browserName,
       },
       {
-        key: 'feature',
-        value: 'title',
+        key: 'requirement',
+        value: 'Page_title',
+      },
+      {
+        key: 'priority',
+        value: 'low',
       },
       {
         value: 'demo',

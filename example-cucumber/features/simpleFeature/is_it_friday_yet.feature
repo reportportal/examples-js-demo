@@ -1,8 +1,8 @@
-@feature:workday @demo
+@requirement:Workday_definition @demo
 Feature: Is it Friday yet?
   Everybody wants to know when it's **Friday**
 
-  @feature:workday
+  @requirement:Workday_definition @priority:hight
   Scenario Outline: Today is or is not Friday
     `Requirements`: Jira ticket [EPMRPP-108280](https://jiraeu.epam.com/browse/EPMRPP-108280). Check the _friday_
 
@@ -16,7 +16,7 @@ Feature: Is it Friday yet?
       | Sunday         | Nope   |
       | anything else! | Nope   |
 
-  @feature:workday
+  @requirement:Workday_definition @priority:low
   Scenario: Today is or is not Monday (but it's failing)
     `Requirements`: Jira ticket [EPMRPP-108280](https://jiraeu.epam.com/browse/EPMRPP-108280). Check the _monday_
 
