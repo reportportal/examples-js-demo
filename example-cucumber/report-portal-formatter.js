@@ -4,7 +4,7 @@ require('dotenv/config');
 const rpConfig = {
   endpoint: process.env.RP_ENDPOINT,
   apiKey: process.env.RP_API_KEY,
-  launch: 'Cucumber regression',
+  launch: 'Cucumber regression tests',
   project: process.env.RP_PROJECT,
   attributes: [
     {

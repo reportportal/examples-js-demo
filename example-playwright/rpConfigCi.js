@@ -3,7 +3,7 @@ require('dotenv/config');
 const config = {
   endpoint: process.env.RP_ENDPOINT,
   apiKey: process.env.RP_API_KEY,
-  launch: 'Playwright regression',
+  launch: 'Playwright regression tests',
   project: process.env.RP_PROJECT,
   attributes: [
     {
